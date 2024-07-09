@@ -1,8 +1,93 @@
-.quadro{
-    padding-top: 70px;
-    background-color: rgb(255, 103, 2);
+
+.container {
+    background-color: black;
+    max-width: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.logo {
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px; 
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.logo p {
+    margin: 0;
+}
+
+.menu{
+    width: 50%;
     text-align: center;
 }
-.quadro h1{
-    font-size: 60px;
+
+.menu nav {
+    justify-content: center; 
+    flex-wrap: wrap;
 }
+
+.menu nav a{
+    color: white;
+    text-decoration: none;
+    padding-right: 30px;
+    font-size: 18px;
+    
+}
+
+
+.redesSociais button {
+    width: 35px;
+    height: 30px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.redesSociais button i{
+    font-size: 20px;
+    color: white;
+}
+
+@media screen and (max-width: 730px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .logo, .menu, .redesSociais {
+        flex: 1 1 33%;
+        text-align: center;
+    }
+
+    .menu nav a {
+        display: inline-block; /* Mantém os links em linha */
+        padding: 5px 10px; /* Ajusta o espaçamento para caber melhor em telas menores */
+
+    }
+
+    .redesSociais {
+        justify-content: center; /* Centraliza os ícones das redes sociais em telas menores */
+        margin-top: 10px;
+    }
+}   

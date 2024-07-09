@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lib\bootstrap-5.3.0\css\bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/f3dfecc4de.js" crossorigin="anonymous"></script>
+    <script src="lib\bootstrap-5.3.0\js\bootstrap.min.js"></script>
+    <link rel="icon" href="images/terra25.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Cabecalho/estilo.css">
+    <link rel="stylesheet" href="principal.css">
+
+    <title>Mapas interativos</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/terra25.png" width="25px">
+                    <p style="color: black;">Mapas interativos</p>
+                </a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html" style="color: black;">Tutorial</a>
+                    <a href="OutrosExemplos.html" style="color: black;">Outros Exemplos</a>
+                </nav>
+            </div>
+            <div class="redesSociais">
+                <button><i class="fa-brands fa-instagram"></i></button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <h4>Criação de Mapas interativas com Leaflet - Outros Exemplos</h4>
+        <h6 class="text-center">Autores: Adryan Gabriel e Bruno César Vani</h6>
+        <br />
+
+        <div class="indice">
+            <h3 class="mt-2">Índice de Exemplos</h3>
+            <ol>
+                <li>
+                    <a href="#ex1" class="indice">Dados de um CSV no mapa usando MarkerCluster</a>
+                </li>
+                <li>
+                    <a href="#ex2" class="indice">Dados de um CSV no map, com marcadores que tem popup</a>
+                </li>
+
+            </ol>
+        </div>
+
+        <div class="pric">
+            <h3 id="ex2" class="titulos">
+                Dados de um CSV no map, com marcadores que tem popup
+            </h3>
+            <p class="escrita">
+                Para realizar tal façanha será preciso importar 2 bibliotecas "novas"
+                o JQuery e PapaParse, ambas seram utilizadas para ler determinado CSV,
+                de sua escolha.
+            </p>
+            <pre class="basic-code" style="color: black">
+
+            <span style="color:orange">var</span> <span style="color:blue">markerClusters</span> = L.markerClusterGroup();
+                <span style="color:orange">$.get</span>(<span style="color:blue">'Data/clusterResidencial.csv'</span>, function (csvString) {
+                    <span style="color:orange"> var </span> <span style="color:blue">data</span> = Papa.parse(csvString, { header: true, dynamicTyping: true }).data;
+                
+                    for (<span style="color:orange">var</span> <span style="color:blue">i</span> in data) {
+                        <span style="color:orange">var</span> <span style="color:blue">row</span> = data[i];
+                        <span style="color:orange">var</span><span style="color:blue">marker</span> = L.marker([row.Lat, row.Lng], {
+                        opacity: 1
+                    }).bindPopup(row.Bairro);
+                    <span style="color:blue">markerClusters</span>.addLayer(marker);
+                }
+                });
+                map.addLayer(<span style="color:blue">markerClusters</span>)
+                
+            </pre>
+            <p class="escrita">
+                Durante o codigo pode ser visto a utilização de novas "tags", uma
+                breve expllisicação sobre o use delas:
+            </p>
+
+            <ul>
+                <li>
+                    <h5 class="escrita"><b>Continue</b></h5>
+                    Uma declaração JavaScript utilizada dentro de loops para pular a
+                    posição atual e continuar com a próxima posição do loop
+                </li>
+                <li>
+                    <h5 class="escrita"><b>$.get()</b></h5>
+                    É uma função do jQuery utilizada para realizar uma requisição AJAX
+                    para carregar dados de um servidor. Neste caso, ela é usada para
+                    carregar o arquivo CSV contendo os dados dos marcadores.
+                </li>
+                <li>
+                    <h5 class="escrita"><b>row.lat e row.lng</b></h5>
+                    São acessos aos campos "lat" e "lng" do objeto "row", que representa
+                    uma linha de dados do CSV analisado.
+                </li>
+                <li>
+                    <h5 class="escrita"><b>Papa.parse()</b></h5>
+                    PapaParse é uma biblioteca JavaScript usada para analisar dados CSV.
+                    Ela converte dados CSV em arrays ou objetos JavaScript.
+                </li>
+                <li>
+                    <h5 class="escrita">
+                        <b>Parâmetros de configurações usados de um Papa.parse()</b>
+                    </h5>
+                </li>
+                <ul>
+                    <li>
+                        <h5 class="escrita"><b>header</b></h5>
+                        Um parâmetro que indica se a primeira linha do CSV contém
+                        cabeçalhos de coluna. Se definido como true, a primeira linha será
+                        interpretada como o cabeçalho da coluna.
+                    </li>
+                    <li>
+                        <h5 class="escrita"><b>dynamicTyping</b></h5>
+                        Um parâmetro que controla se os valores das células devem ser
+                        automaticamente convertidos para os tipos de dados apropriados
+                        (por exemplo, números, booleanos) com base em seu formato. Se
+                        definido como true, Papa.parse() tentará colocar automaticamente
+                        os tipos de dados das células.
+                    </li>
+                    <li>
+                        <h5 class="escrita"><b>delimiter</b></h5>
+                        Um parâmetro que especifica o caractere delimitador utilizado para
+                        separar os campos no CSV. No exemplo, o delimitador é definido
+                        como "|".
+                    </li>
+                </ul>
+                <li>
+                    <h5 class="escrita"><b>NaN</b></h5>
+                    NaN é uma abreviação de "Not a Number", é um valor especial em
+                    JavaScript que representa um valor que não é um número válido.
+                </li>
+            </ul>
+
+            <p>
+                <a href="ICJ_CarregarCSVCluster.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
+                        Exemplo</button></a>
+            </p>
+        </div>
+
+        <div class="pric">
+            <h3 id="ex1" class="titulos">
+                Dados de um CSV no mapa usando MarkerCluster
+            </h3>
+            <p class="escrita">
+                Para realizar tal façanha será preciso importar 2 bibliotecas "novas"
+                o JQuery e PapaParse, ambas seram utilizadas para ler determinado CSV,
+                de sua escolha.
+            </p>
+            <pre class="basic-code" style="color: black">
+
+            <span style="color:orange">function</span> <span style="color:blue">initMap</span>() {
+                map = L.map(<span style="color:blue">'map'</span>, {
+                    center: [-21, -50],
+                    zoom: 6,
+                });
+            
+                <span style="color:orange">var</span> <span style="color:blue">osm</span> = L.tileLayer(<span style="color:blue">'https://tile.openstreetmap.org/{z}/{x}/{y}.png'</span>, {
+                    attribution: <span style="color:blue">'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'</span>
+                }).addTo(map);
+            
+                <span style="color:orange">$.get</span>(<span style="color:blue">'Data/ListagemAlunos.csv'</span>, <span style="color:orange">function</span>(csvString) {
+                    <span style="color:orange">let</span> <span style="color:blue">contador</span> = 0;
+                    contador++;
+                    <span style="color:orange">var</span> <span style="color:blue">data</span> = Papa.parse(csvString, { header: true, dynamicTyping: true }).data;
+                    <span style="color:orange">for</span> (<span style="color:orange">var</span> <span style="color:blue">i</span> = 0; i < data.length; i++) {
+                        <span style="color:orange">var</span> <span style="color:blue">row</span> = data[i];
+                        <span style="color:orange">if</span> (!row.Nome || !row.Endereço) {
+                            console.error(<span style="color:blue">"Dados ausentes para o marcador:"</span>, row);
+                            <span style="color:orange">continue</span>;
+                        }
+                        (<span style="color:orange">function</span>(row) {
+                            <span style="color:orange">var</span> <span style="color:blue">enderecoCompleto</span> = <span style="color:blue">`${row.Cidade}, ${row.Bairro}`</span>;
+                            geoCodeAddress(enderecoCompleto, <span style="color:orange">function</span>(error, location) {
+                                <span style="color:orange">if</span> (error) {
+                                    console.log(enderecoCompleto);
+                                    console.error(<span style="color:blue">'Erro na geocodificação:'</span>, error);
+                                    <span style="color:orange">return</span>;
+                                }
+            
+                                <span style="color:orange">var</span> <span style="color:blue">popup</span> = <span style="color:blue">"< b>"</span> + row.Nome + <span style="color:blue">"< /b>< br>Curso: "</span> + row.Curso + <span style="color:blue">"
+                                    < br>Ano de Ingresso:" </span>+ row.Ingresso;
+                                <span style="color:orange">var</span> <span style="color:blue">marker</span> = L.marker([location.lat, location.lng], {
+                                    opacity: 1
+                                }).bindPopup(popup);
+                                markers.push(marker);
+                                marker.addTo(map);
+                            });
+                        })(row);
+                    }
+                });
+            }
+            
+            <span style="color:orange">function</span> <span style="color:blue">geoCodeAddress</span>(address, callback) {
+                <span style="color:orange">let</span> <span style="color:blue">contador</span> = 0;
+                contador++;
+            
+                <span style="color:orange">if</span> (typeof google === <span style="color:blue">'undefined'</span> || typeof google.maps === <span style="color:blue">'undefined'</span>) {
+                    console.error(<span style="color:blue">'Erro: API do Google Maps não está carregada'</span>);
+                    <span style="color:orange">return</span>;
+                }
+                <span style="color:orange">var</span> <span style="color:blue">geocoder</span> = <span style="color:orange">new</span> google.maps.Geocoder();
+                geocoder.geocode({ <span style="color:blue">'address'</span>: address }, <span style="color:orange">function</span>(results, status) {
+                    <span style="color:orange">if</span> (status === <span style="color:blue">'OK'</span> && results && results.length > 0) {
+                        <span style="color:orange">var</span> <span style="color:blue">location</span> = results[0].geometry.location;
+                        callback(<span style="color:blue">null</span>, { lat: location.lat(), lng: location.lng() });
+                    } <span style="color:orange">else</span> {
+                        console.log(contador);
+                        callback(<span style="color:orange">new</span> Error(<span style="color:blue">'Geocodificação não foi bem sucedida: '</span> + status));
+                    }
+                });
+            }
+            </pre>
+            <p class="escrita">
+                Durante o codigo pode ser visto a utilização da API do google maps, para conseguir uma chave da API deve
+                se cadastrar
+                no google cloud console
+            </p>
+
+            <p>
+                <a href="ICJ_ListagemAlunos.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
+                        Exemplo</button></a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

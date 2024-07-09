@@ -6,69 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib\bootstrap-5.3.0\css\bootstrap.min.css">
     <script src="lib\bootstrap-5.3.0\js\bootstrap.min.js"></script>
-    <title>Exemplos de Map</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .pric {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .basic-code {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
-
-        body {
-            background-color: #9cacc2;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/f3dfecc4de.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/terra25.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Cabecalho/estilo.css">
+    <link rel="stylesheet" href="principal.css">
+    <title>Mapas interativos</title>
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/terra25.png" width="25px">
+                    <p style="color: black;">Mapas interativos</p>
+                </a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html" style="color: black;">Tutorial</a>
+                    <a href="OutrosExemplos.html" style="color: black;">Outros Exemplos</a>
+                </nav>
+            </div>
+            <div class="redesSociais">
+                <button><i class="fa-brands fa-instagram"></i></button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>Exemplos de Mapas</h1>
-        <div class="pric">
-            <h2>1. Como criar um mapa e marcadores nele:</h2>
-            <p>Em um arquivo html,com a biblioteca Leaflet já adicionada, você deve abrir um script e nele colocar: </p>
+        <h4>Criação de Mapas interativas com Leaflet                     .</h4>
+        <h6 class="text-center">Autores: Adryan Gabriel e Bruno César Vani</h6><br>
+
+
+        <div class="indice">
+            <h2 class="mt-2">Índice de Exemplos</h2>
+            <ol>
+                <li><a href="#ex1" class="indice">Como criar um mapa e marcadores:</a></li>
+                <li><a href="#ex2" class="indice">Como criar zonas/areas marcadas como circulos e triângulos ao meu
+                        mapa?</a></li>
+                <li><a href="#ex3" class="indice">Como mudar os icones dos marcadores? e como colocar sombras
+                        neles?</a></li>
+
+                <li><a href="#ex4" class="indice">Como utilizar outros estilos de Mapas?</a></li>
+                <li><a href="#ex6" class="indice">Como colocar escala? Ou como colocar Marca D'agua</a></li>
+
+                <li><a href="#ex7" class="indice">Como trocar de layers?Como fazer com que um marcador suma quando
+                        eu quero?</a></li>
+                <li><a href="#ex9" class="indice">Como colocar GeoJSON em meu mapa?</a></li>
+
+                <li><a href="#ex10" class="indice">Como colocar a barra de pesquisa?</a></li>
+                <li><a href="#ex11" class="indice">Como colocar um marcador que engloba outros marcadores e me
+                        mostra quantos tem em determinada regiâo</a></li>
+                <li><a href="#ex13" class="indice">Como colocar dados de um CSV no mapa?</a></li>
+
+            </ol>
+        </div>
+
+        <div class="pric mt-2">
+            <h3 id="ex1" class="titulos">1. Como criar um mapa e marcadores:</h3>
+            <p class="escrita">Em um arquivo html,com a biblioteca Leaflet já adicionada, você deve abrir um script
+                e nele colocar: </p>
             <pre class="basic-code" style="color: black;">
                 <span style="color: rgb(255, 85, 0);">var</span> <span style="color: rgb(0, 38, 255)";> map</span>  = L.map(<span style="color: rgb(255, 85, 0);">'map'</span>).setView([0, 0], 1);
             
-                L.tileLayer(<span style="color: rgb(255, 85, 0);">'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy'</span>, {
-                attribution: <span style="color: rgb(255, 85, 0);">'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a
+                L.tileLayer(<span style="color: rgb(255, 85, 0);">
+                'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy'</span>,
+                {attribution: <span style="color: rgb(255, 85, 0);">'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a
                     href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'</span>
                 }).addTo(map);
                 <span style="color: rgb(255, 85, 0);">var</span> <span style="color: rgb(0, 38, 255)";> marker</span> = L.marker([51.5, -0.09]).addTo(map);
             </pre>
 
-            </p>
             <p><a href="ICJ_LayerMapEMarcador.html" target="_blank"><button class="btn btn-secondary">Ver
                         Exemplo</button></a></p>
 
@@ -76,8 +85,9 @@
 
 
         <div class="pric">
-            <h2>2. Como adicionar marcações como circulos e triângulos ao meu mapa?</h2>
-            <p>No arquivo com um mapa, voce pode colocar os seguintes poligonos </p>
+            <h3 id="ex2" class="titulos">2. Como criar zonas/areas marcadas como circulos e triângulos ao meu mapa?
+            </h3>
+            <p class="escrita">No arquivo com um mapa, voce pode colocar os seguintes poligonos </p>
             <pre class="basic-code" style="color: black;">
                 <span style="color: rgb(255, 85, 0);">var</span> <span style="color: blue;">circle </span> = L.circle([51.508, -0.11], {
                     <span style="color: rgb(255, 85, 0);">color:</span> 'red',
@@ -100,8 +110,8 @@
         </div>
 
         <div class="pric">
-            <h2>3. Como mudar os icones dos marcadores? e como colocar sombras neles?</h2>
-            <p>No arquivo com um mapa e com marcadores, voce pode fazer as seguintes alterações </p>
+            <h3 class="titulos" id="ex3">3. Como mudar os icones dos marcadores? e como colocar sombras neles?</h3>
+            <p class="escrita">No arquivo com um mapa e com marcadores, voce pode fazer as seguintes alterações </p>
             <pre class="basic-code" style="color: black;">
                  <span style="color: rgb(255, 85, 0);">var</span> <span style="color: blue;">leafletIcon </span>= L.icon ({
                     iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
@@ -113,43 +123,48 @@
                 });
             </pre>
             </p>
-            <p><a href="ICJ_MudancaIconeSombra.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a></p>
+            <p><a href="ICJ_MudancaIconeSombra.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a></p>
         </div>
 
 
         <div class="pric">
-            <h2>4. Como utilizar outros estilos de Mapas?</h2>
-            <p> Para começar, você pode encontrar outros provedores de mapas no site Leaflet Providers Preview. Uma vez
-                escolhido o provedor de mapas desejado, copie o código fornecido pelo provedor e cole-o em seu projeto.
+            <h3 id="ex4" class="titulos"> 4. Como utilizar outros estilos de Mapas?</h3>
+            <p class="escrita"> Para começar, você pode encontrar outros provedores de mapas no site Leaflet
+                Providers Preview. Uma vez
+                escolhido o provedor de mapas desejado, copie o código fornecido pelo provedor e cole-o em seu
+                projeto.
             </p>
             <pre class="basic-code" style="color: black;">
-                 <span style="color: rgb(255, 85, 0);">var</span> <span style="color: blue;">OpenStreetMap_HOT </span>= L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                 <span style="color: rgb(255, 85, 0);">var</span> <span style="color: blue;">OpenStreetMap_HOT 
+
+                 </span>= L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
                     maxZoom: 19,
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, 
+                    Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
                 }).addTo(map);
-                
-                
             </pre>
             </p>
-            <p><a href="ICJ_OutrasLayers.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a>
+            <p><a href="ICJ_OutrasLayers.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a>
             </p>
 
         </div>
 
         <div class="pric">
-            <h2>5. Escala</h2>
-            <h5>O que é escala?</h5>
-            <p>A escala é um tipo específico de escala usada em mapas para representar a relação
+            <h3 id="ex5" class="titulos">O que é escala?</h3>
+            <p class="escrita">A escala é um tipo específico de escala usada em mapas para representar a relação
                 entre as distâncias no mapa e as distâncias correspondentes no terreno real.</p>
-            <p>Ela pode ser expressa de três maneiras: numericamente (como 1:100.000,
+            <p class="escrita">Ela pode ser expressa de três maneiras: numericamente (como 1:100.000,
                 indicando que 1 unidade no mapa equivale a 100.000 unidades no mundo real), por meio de uma linha de
                 escala (uma barra dividida em segmentos marcados com distâncias reais) ou verbalmente
                 (como "Um centímetro equivale a um quilômetro").</p>
         </div>
 
         <div class="pric">
-            <h2>Como colocar escala? Ou como colocar Marca D'agua</h2>
-            <p>Para adicionar a escala e uma marca d'água ao seu mapa, siga estas etapas simples:</p>
+            <h3 id="ex6" class="titulos">5. Como colocar escala?Como colocar Marca D'agua</h3>
+            <p class="escrita">Para adicionar a escala e uma marca d'água ao seu mapa, siga estas etapas simples:
+            </p>
             <pre class="basic-code" style="color: black;">
                 <span style="color: orange;">var</span> L.control.scale({
                     metric: true,
@@ -157,6 +172,8 @@
                     position: 'topright'
                 }).addTo(map);
                 
+
+                <span style="color: cadetblue;"> Marca D'Agua:</span>
                 <span style="color: orange;">L.Control.Watermark</span> = L.Control.extend({
                     onAdd: function(map) {
                         var img = L.DomUtil.create('img');
@@ -175,12 +192,15 @@
                   
             </pre>
             </p>
-            <p><a href="ICJ_EscalaMarcaDagua.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a></p>
+            <p><a href="ICJ_EscalaMarcaDagua.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a></p>
 
         </div>
         <div class="pric">
-            <h2>6. Como trocar de layers?Como fazer com que um marcador suma quando eu quero?</h2>
-            <p>Abaixo, você pode observar que, ao lidar com várias camadas de mapa, é possível criar um controle de
+            <h3 id="ex7" class="titulos"> 6. Como trocar de layers?Como fazer com que um marcador suma quando eu
+                quero?</h3>
+            <p class="escrita">Abaixo, você pode observar que, ao lidar com várias camadas de mapa, é possível criar
+                um controle de
                 camadas para alterá-las
                 simultaneamente. Isso permite que os usuários alternem entre diferentes estilos de mapa de forma
                 conveniente.
@@ -201,29 +221,33 @@
                 
             </pre>
             </p>
-            <p><a href="ICJ_LayerControl.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a>
+            <p><a href="ICJ_LayerControl.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a>
             </p>
 
         </div>
         <div class="pric">
-            <h2>7. GeoJSON</h2>
-            <h5>O que é o GeoJSON?</h5>
-            <p>GeoJSON é uma iniciativa open-source desenvolvida para organizar as estruturas geográficas do nosso
+            <h3 id="ex8" class="titulos"> O que é o GeoJSON?</h3>
+            <p class="escrita">GeoJSON é uma iniciativa open-source desenvolvida para organizar as estruturas
+                geográficas do nosso
                 planeta em
                 formato de código. Ele é baseado no JSON (JavaScript Object Notation), proporcionando uma maneira
                 eficiente de representar
                 e compartilhar dados geoespaciais.</p>
-            <p>Um exemplo de uso do GeoJSON é para representar dados geográficos em mapas interativos da web. Por
+            <p class="escrita">Um exemplo de uso do GeoJSON é para representar dados geográficos em mapas
+                interativos da web. Por
                 exemplo,
                 você pode usar o GeoJSON para marcar locais específicos, desenhar áreas geográficas, como estados ou
                 países. Esses dados
-                podem ser então incorporados em aplicativos de mapeamento, como o Google Maps ou o Leaflet, para criar
+                podem ser então incorporados em aplicativos de mapeamento, como o Google Maps ou o Leaflet, para
+                criar
                 visualizações
                 interativas e informativas.</p>
         </div>
         <div class="pric">
-            <h2>Como colocar GeoJSON em meu mapa?</h2>
-            <p>Voce pode importar poligonos e marcacoes de Json, atraves do GeoJson.io, podendo criar arquivos em JS e
+            <h3 id="ex9" class="titulos">7. Como colocar GeoJSON em meu mapa?</h3>
+            <p class="escrita">Voce pode importar poligonos e marcacoes de Json, atraves do GeoJson.io, podendo
+                criar arquivos em JS e
                 geoJson,para colocar em seu mapa.
             </p>
             <pre class="basic-code" style="color: black;">
@@ -246,27 +270,30 @@
                 <span style="color: orange;">var</span> <span style="color: blue;">pontoData</span> = L.geoJSON(pontosJSON).addTo(map);
             </pre>
             </p>
-            <p><a href="ICJ_MaisGeoJson.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a>
+            <p><a href="ICJ_MaisGeoJson.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a>
             </p>
 
         </div>
 
         <div class="pric">
-            <h2>8. Como colocar a barra de pesquisa?</h2>
-            <p>Para colocar a barra de pesquisa é simples, apenas um passo é necessitado:</p>
+            <h3 id="ex10" class="titulos">8. Como colocar a barra de pesquisa?</h3>
+            <p class="escrita">Para colocar a barra de pesquisa é simples, apenas um passo é necessitado:</p>
             <pre class="basic-code" style="color: black;">
                 L.Control.geocoder().addTo(map);
             </pre>
             </p>
-            <p><a href="ICJ_BarraPesquias.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a>
+            <p><a href="ICJ_BarraPesquias.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a>
             </p>
-
         </div>
 
         <div class="pric">
-            <h2>9. Como colocar um marcador que engloba outros marcadores e me mostra quantos tem em determinada regiâo
-            </h2>
-            <p> Para realizar este feito, voce deve baixar a pasta de MarkerCluster disponibilizada neste link: '<a
+            <h3 id="ex11" class="titulos">9. Como colocar um marcador que engloba outros marcadores e me mostra
+                quantos tem em determinada regiâo</h3>
+
+            <p class="escrita"> Para realizar este feito, voce deve baixar a pasta de MarkerCluster disponibilizada
+                neste link: '<a
                     href="https://github.com/Leaflet/Leaflet.markercluster">https://github.com/Leaflet/Leaflet.markercluster</a>'
                 apos baixar, voce pega a pasta dist e coloque em sua pasta do projeto, importando em seu projeto os
                 scripts e links
@@ -300,21 +327,25 @@
                 map.addLayer(markers);
             </pre>
             </p>
-            <p><a href="ICJ_MarkerCluster.html" target="_blank"><button class="btn btn-secondary">Ver Exemplo</button></a>
+            <p><a href="ICJ_MarkerCluster.html" target="_blank"><button class="btn btn-secondary">Ver
+                        Exemplo</button></a>
             </p>
 
         </div>
 
         <div class="pric">
-            <h2>10. CSV</h2>
-            <h5>O que é o CSV?</h5>
-            <p>CSV é a sigla para Comma Separated Values (em português, valores separados por vírgulas). Um arquivo CSV
+            <h3 id="ex12" class="titulos"> O que é CSV?</h3>
+            <p class="escrita">CSV é a sigla para Comma Separated Values (em português, valores separados por
+                vírgulas). Um arquivo CSV
                 é um
-                arquivo de texto simples que armazena informações de planilhas e tabelas. O conteúdo geralmente é uma
+                arquivo de texto simples que armazena informações de planilhas e tabelas. O conteúdo geralmente é
+                uma
                 tabela de
                 texto, números ou datas.</p>
-            <p>Em geral, a primeira linha em um arquivo CSV contém os rótulos das colunas da tabela. Cada uma das linhas
-                subsequentes representa uma linha da tabela. Vírgulas separam cada célula na linha, que é a razão para o
+            <p class="escrita">Em geral, a primeira linha em um arquivo CSV contém os rótulos das colunas da tabela.
+                Cada uma das linhas
+                subsequentes representa uma linha da tabela. Vírgulas separam cada célula na linha, que é a razão
+                para o
                 nome do
                 formato.</p>
             <pre class="basic-code" style="color: black;">
@@ -325,14 +356,15 @@
         </div>
 
         <div class="pric">
-            <h2>Como colocar dados de um CSV no mapa?</h2>
-            <p>Para realizar tal façanha será preciso importar 2 bibliotecas "novas" o JQuery e PapaParse, ambas seram
-                utilizadas para
-                ler determinado CSV, de sua escolha.
-            </p>
+            <h3 id="ex13" class="titulos">10. Como colocar dados de um CSV no mapa?</h3>
+            <p class="escrita">Para realizar tal façanha será preciso importar 2 bibliotecas "novas" o JQuery e
+                PapaParse, ambas seram
+                utilizadas para ler determinado CSV, de sua escolha.</p>
             <pre class="basic-code" style="color: black;">
+
                 <span style="color:orange">$.get</span>(<span style="color:blue">'Data/datacsv.csv'</span>, function (csvString) {
-                    <span style="color:orange">var</span> <span style="color:blue">data</span> = Papa.parse(csvString, { header: true, dynamicTyping: true, delimiter: "<span style='color:blue'>|</span>" }).data;
+                    <span style="color:orange">var</span> <span style="color:blue">data</span> = Papa.parse(csvString, { 
+                        header: true, dynamicTyping: true, delimiter: "<span style='color:blue'>|</span>" }).data;
                     for (var <span style="color:blue">i</span> = 0; i < data.length; i++) {
                         <span style="color:orange">var</span> <span style="color:blue">row</span>  = data[i];
                 
@@ -345,7 +377,9 @@
                             console.log("<span style='color:blue'>Coordenadas ausentes para o marcador:</span>", row);
                             <span style="color:orange">continue</span>;
                         }
-                
+                        
+                        var <span style="color:blue"> visitado </span> = row.Visitado ? row.Visitado : 0;
+
                         var <span style="color:blue">marker</span> = L.marker([row.lat, row.lng], {
                             opacity: 1
                         }).bindPopup(row.Name);
@@ -355,60 +389,9 @@
                 });
                 
             </pre>
+            <p><a href="ICJ_CarregarCSV copy.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
+                        Exemplo</button></a></p>
 
-            <p>Durante o codigo pode ser visto a utilização de novas "tags", uma breve expllisicação sobre o use delas:
-            <ul>
-                <li>
-                    <h5>Continue</h5> Uma declaração JavaScript utilizada dentro de loops para pular a posição atual e
-                    continuar com a próxima posição do loop
-                </li>
-                <li>
-                    <h5>$.get()</h5> É uma função do jQuery utilizada para realizar uma requisição AJAX para carregar
-                    dados de um servidor. Neste caso, ela é usada para carregar o arquivo CSV contendo os dados dos
-                    marcadores.
-                </li>
-                <li>
-                    <h5>row.lat e row.lng</h5> São acessos aos campos "lat" e "lng" do objeto "row", que representa uma
-                    linha de dados do CSV analisado.
-                </li>
-                <li>
-                    <h5>Papa.parse()</h5> PapaParse é uma biblioteca JavaScript usada para analisar dados CSV. Ela
-                    converte dados CSV em arrays ou objetos JavaScript.
-                </li>
-                <li>
-                    <h5>Parâmetros de configurações usados de um Papa.parse()</h5>
-                </li>
-                <ul>
-                    <li>
-                        <h5>header</h5> Um parâmetro que indica se a primeira linha do CSV contém cabeçalhos de coluna.
-                        Se definido como true, a primeira linha será interpretada como o cabeçalho da coluna.
-                    </li>
-                    <li>
-                        <h5>dynamicTyping</h5> Um parâmetro que controla se os valores das células devem ser
-                        automaticamente convertidos para os tipos de dados apropriados (por exemplo, números, booleanos)
-                        com base em seu formato. Se definido como true, Papa.parse() tentará colocar automaticamente os
-                        tipos de dados das células.
-                    </li>
-                    <li>
-                        <h5>delimiter:</h5> Um parâmetro que especifica o caractere delimitador utilizado para separar
-                        os campos no CSV. No exemplo, o delimitador é definido como "|".
-                    </li>
-                </ul>
-                <li>
-                    <h5>NaN</h5> NaN é uma abreviação de "Not a Number", é um valor especial em JavaScript que
-                    representa um valor que não é um número válido.
-                </li>
-            </ul>
-            </p>
-            <div class="row">
-                <div class="col-6">
-                    <p><a href="ICJ_CarregarCSV.html"><button class="btn btn-secondary btn-block">Ver Exemplo 1</button></a></p>
-                </div>
-                <div class="col-6">
-                    <p><a href="ICJ_CarregarCSV copy.html"><button class="btn btn-secondary btn-block">Ver Exemplo 2</button></a></p>
-                </div>
-            </div>
-            
 
         </div>
 
