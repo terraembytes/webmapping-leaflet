@@ -34,6 +34,7 @@ h1 {
     background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 
@@ -45,6 +46,13 @@ h1 {
     font-size: 14px;
     padding: 0;
     margin: 0;
+    text-align: start;
+}
+
+.title{
+    font-size: 27px;
+    align-items: center;
+    text-align: center;
 }
 
 .pric basic-code {
@@ -72,6 +80,19 @@ body {
     margin-top: 10px;
 }
 
+.basic-text{
+    text-align: left;
+    font-size: 15px;
+    margin: 0.5rem;
+    margin-left: 2rem;
+}
+
+.button-exemplos{
+    margin-top: 1.5rem;
+    width: 15rem;
+    align-items: center;
+    text-align: absolute;
+}
 .titulos{
     font-size: 20px;
 }
@@ -97,3 +118,23 @@ body {
     border-radius: 50%;
     background-color: #ff7800;
 }
+
+
+@media screen and (max-width: 730px) {
+
+    .logo, .menu, .redesSociais {
+        flex: 1 1 33%;
+        text-align: center;
+    }
+
+    .menu nav a {
+        display: inline-block;
+        padding: 5px 10px;
+
+    }
+
+    .redesSociais {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}   
