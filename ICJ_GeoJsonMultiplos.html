@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camada do Mapa</title>
+    <link rel="stylesheet" href="Leaflet\leaflet.css">
+</head>
+<style>
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+</style>
+
+<body>
+    <div id="map"></div>
+</body>
+
+</html>
+<script src="Leaflet\leaflet.js"></script>
+
+<script>
+    var map = L.map('map').setView([0, 0], 1);
+
+    L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const geojsonFiles = [
+        fetch('Data/linha.geojson'),
+        fetch('Data/pontos.geojson'),
+        fetch('Data/poligono.geojson')
+    ];
+
+    // Usa Promise.all para aguardar todas as promessas
+        Promise.all(geojsonFiles)
+            .then(responses => {
+                // Verifica se todas as respostas foram bem-sucedidas
+                responses.forEach(response => {
+                    if (!response.ok) {
+                        throw new Error('A network diz que tem algo errado!');
+                    }
+                });
+
+                // Converte todas as respostas em JSON
+                return Promise.all(responses.map(response => response.json()));
+            })
+            
+            .then(dataArray => {
+                // Adiciona cada GeoJSON ao mapa
+                dataArray.forEach(data => {
+                    L.geoJSON(data, {
+                        style: function () {
+                            return { color: 'black' }; // Define a cor padrão
+                        }
+                    }).bindPopup(function () {
+                        return "Rota Feita"; // Texto do popup
+                    }).addTo(map);
+                });
+            })
+            .catch(error => {
+                console.error('Houve um problema com a requisição Fetch:', error);
+            });
+
+</script>

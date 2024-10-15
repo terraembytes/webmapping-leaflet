@@ -7,7 +7,6 @@
     <title>Camada do Mapa</title>
     <link rel="stylesheet" href="Leaflet/leaflet.css">
     <script src="Leaflet/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
 
     <style>
@@ -28,16 +27,24 @@
 
         var map = L.map('map', {
             center: [40.57, -74.69],
-            zoom: 9, 
+            zoom: 9,
         });
 
         var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        $.get('Data/datacsv.csv', function (csvString) {
-            var data = Papa.parse(csvString, { header: true, dynamicTyping: true, delimiter: "|" }).data;
-            for (var i = 0; i < data.length; i++) {
+        fetch('Data/datacsv.csv')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na rede ao tentar buscar o arquivo CSV');
+                }
+                return response.text();
+            })
+
+            .then(csvString => {
+                var data = Papa.parse(csvString, { header: true, dynamicTyping: true, delimiter: "|" }).data;
+                for (var i = 0; i < data.length; i++) {
                 var row = data[i];
 
                 if (isNaN(row.lat) || isNaN(row.lng)) {
@@ -56,9 +63,10 @@
 
                 marker.addTo(map);
             }
-        });
-
-
+            })
+            .catch(error => {
+                console.error('Houve um problema com a requisição Fetch:', error);
+            });
 
     </script>
 </body>

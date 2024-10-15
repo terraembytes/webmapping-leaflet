@@ -87,7 +87,6 @@
 
     L.control.watermark({position:'bottomleft'}).addTo(map);
 
-    // Camadas do Google Maps
     var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
@@ -110,7 +109,6 @@
 	ext: 'png'
 });
 
-    // Controles de camada
     var baseLayers = {
         "OpenStreetMap": osm,
         "mapa 2": googleSat,

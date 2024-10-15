@@ -25,13 +25,13 @@
             <div class="menu">
                 <nav>
                     <a href="index.html" style="color: black;">Tutorial</a>
-                    <a href="OutrosExemplos.html" style="color: black;">Outros Exemplos</a>
+                    <!-- <a href="OutrosExemplos.html" style="color: black;">Outros Exemplos</a> -->
                 </nav>
             </div>
-            <div class="redesSociais">
+            <!-- <div class="redesSociais">
                 <button><a href="https://www.instagram.com/terraembytes/"><i class="fa-brands fa-instagram"></i>
                     </a></button>
-            </div>
+            </div> -->
         </div>
     </header>
 
@@ -74,34 +74,114 @@
             <div class="col-12">
                 <div class="pric mt-4">
                     <h3 id="ex1" class="titulos">1. Como criar um mapa e marcadores:</h3>
-                    <p class="escrita">Em um arquivo html,com a biblioteca Leaflet já adicionada, você deve abrir um
-                        script e nele colocar: </p>
-                    <div class="basic-code" style="color: black;">
-                        <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
-                                style="color: rgb(0, 38, 255)" ;> map</span> = L.map(<span
-                                style="color: rgb(255, 85, 0);">'map'</span>).setView([0, 0], 1);</p>
-                        <p class="basic-text">L.tileLayer(<span style="color: rgb(255, 85, 0);">
-                                'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy'</span>,
-                        </p>
-                        <p class="basic-text">{attribution: <span style="color: rgb(255, 85, 0);">'<a
-                                    href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a
-                                    href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap
-                                    contributors</a>'</span> }).addTo(map); </p>
-                        <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
-                                style="color: rgb(0, 38, 255)" ;> marker</span> = L.marker([51.5, -0.09]).addTo(map);
-                        </p>
+                    <p class="escrita">Em um arquivo html, com a biblioteca Leaflet já adicionada, você deve abrir um
+                        script e nele colocar o seguinte código (esse código também pode ser pego no site do Leaflet):
+                    </p>
+
+                    <!-- Mini Navbar
+                    <div class="abanavbar">
+                        <a class="tablinks" onclick="openVersion(event, 'Limpa')" id="defaultOpen">Versão Limpa</a>
+                        <a class="tablinks" onclick="openVersion(event, 'Preenchida')">Versão Preenchida</a>
                     </div>
+         -->
+                    <!-- Conteúdo da Versão Limpa -->
+                    <!-- <div id="Limpa" class="tabcontent">
+                        <h5 class="escrita">Exemplo de Base</h5>
+                        <div class="basic-code" style="color: black;">
+                            <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
+                                    style="color: rgb(0, 38, 255);" ;> map</span> = L.map(<span
+                                    style="color: rgb(255, 85, 0);">'map'</span>).setView([0, 0], 1);</p>
+                            <p class="basic-text">L.tileLayer(<span style="color: rgb(255, 85, 0);">
+                                    'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy'</span>,
+                            </p>
+                            <p class="basic-text">{attribution: <span style="color: rgb(255, 85, 0);">'<a
+                                        href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a>
+                                    <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy;
+                                        OpenStreetMap
+                                        contributors</a>'</span> }).addTo(map); </p>
+                            <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
+                                    style="color: rgb(0, 38, 255);" ;> marker</span> = L.marker([51.5,
+                                -0.09]).addTo(map);
+                            </p>
+                        </div>
+                    </div> -->
+
+                    <!-- Conteúdo da Versão Preenchida -->
+                    <div>
+                        <!-- <h5 class="escrita">Exemplo Preenchido</h5> -->
+                        <div class="basic-code" style="color: black;">
+                            <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
+                                    style="color: rgb(0, 38, 255);" ;> map</span> = L.map(<span
+                                    style="color: rgb(255, 85, 0);">'map'</span>).setView([0, 0], 1);</p>
+                            <p class="basic-text">L.tileLayer(<span style="color: rgb(255, 85, 0);">
+                                    'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=0xLQbt4WJeeuwW3p39Hy'</span>,
+                            </p>
+                            <p class="basic-text">{attribution: <span style="color: rgb(255, 85, 0);">'<a
+                                        href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a>
+                                    <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy;
+                                        OpenStreetMap
+                                        contributors</a>'</span> }).addTo(map); </p>
+                            <p class="basic-text"><span style="color: rgb(255, 85, 0);">var</span> <span
+                                    style="color: rgb(0, 38, 255);" ;> marker</span> = L.marker([51.5,
+                                -0.09]).addTo(map);
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="escrita">
+                        Durante o codigo pode ser visto a utilização de novas "tags", uma
+                        breve expllisicação sobre o use delas:
+                    </p>
+                    <ul>
+                        <li>
+                            <h5 class="escrita"><b>Var Map</b></h5>
+                            <p style="font-size: 15px;">É a declaração de uma variável que armazena uma instância de
+                                algum elemento do mapa.</p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>L.map</b></h5>
+                            <ul>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.</b> : é um atalho para acessar toda as funções e
+                                        classes
+                                        do Leaflet</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.map</b> : é um exemplo de uma função</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>L.tileLayer e attribution</b></h5>
+                            <ul>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.tileLayer</b> : é a função para criar a camada de
+                                        tiles</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 15px;"><b>attribution</b> : É o credito dos criadores do mapa
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>setView([0, 0], 1)</b></h5>
+                            <p style="font-size: 15px;">([lat,lng], zoom), lat: latitude; lng: longitude;
+                            </p>
+                        </li>
+                    </ul>
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-4">
                             <p><a href="ICJ_LayerMapEMarcador.html" target="_blank"><button
-                                        class="btn btn-secondary  button-exemplos">Ver Exemplo</button></a></p>
+                                        class="btn btn-secondary button-exemplos">Ver Exemplo</button></a></p>
                         </div>
                         <div class="col-4"></div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="col-12">
@@ -173,7 +253,7 @@
                 <div class="pric ml-00">
                     <h3 id="ex4" class="titulos"> 4. Como utilizar outros estilos de Mapas?</h3>
                     <p class="escrita"> Para começar, você pode encontrar outros provedores de mapas no site Leaflet
-                        Providers Preview. Uma vez escolhido o provedor de mapas desejado, copie o código fornecido pelo
+                        Providers divview. Uma vez escolhido o provedor de mapas desejado, copie o código fornecido pelo
                         provedor e cole-o em seu
                         projeto.
                     </p>
@@ -202,24 +282,29 @@
 
         <div class="pric">
             <h3 id="ex5" class="titulos ml-100">O que é escala?</h3>
-            <p class="escrita">A escala é um tipo específico de escala usada em mapas para representar a relação
-                entre as distâncias no mapa e as distâncias correspondentes no terreno real.</p>
-            <p class="escrita">Ela pode ser expressa de três maneiras: numericamente (como 1:100.000,
-                indicando que 1 unidade no mapa equivale a 100.000 unidades no mundo real), por meio de uma linha de
-                escala (uma barra dividida em segmentos marcados com distâncias reais) ou verbalmente
-                (como "Um centímetro equivale a um quilômetro").</p>
+            <p class="escrita">A escala é uma representação específica usada em mapas para indicar a
+                relação entre as distâncias no mapa e as distâncias correspondentes no terreno real.</p>
+            <p class="escrita">Ela pode ser expressa de três maneiras:
+            <ul>
+                <li>Numericamente (como 1:100.000,indicando que 1 unidade no mapa equivale a 100.000 unidades no mundo
+                    real)</li>
+                <li>Linha de escala (uma barra dividida em segmentos marcados com distâncias reais)</li>
+                <li>Verbalmente (como "Um centímetro equivale a um quilômetro").</li>
+            </ul>
+            </p>
         </div>
 
         <div class="row">
             <div class="col-12">
                 <div class="pric">
-                    <h3 id="ex6" class="titulos">5. Como colocar escala (imperial e metrica) e como colocar Marca D'agua?</h3>
+                    <h3 id="ex6" class="titulos">5. Como colocar escala (imperial e metrica) e como colocar Marca
+                        D'agua?</h3>
                     <p class="escrita">Para adicionar a escala e uma marca d'água ao seu mapa, siga estas etapas
                         simples:
                     </p>
                     <div class="basic-code" style="color: black;">
                         <p class="basic-text">
-                            <span style="color: orange;">var</span> <span style="color: blue;">L.control.scale</span>({
+                            <span style="color: blue;">L.control.scale</span>({
                             <br>
                             <span style="color: blue;">metric:</span> true, <br>
                             <span style="color: blue;">imperial: </span>false, <br>
@@ -246,6 +331,48 @@
                                 style="color: blue;">position:</span> 'bottomleft' }).addTo(map);
                         </p>
                     </div>
+                    <p class="escrita">
+                        Durante o codigo pode ser visto a utilização de novas "tags", uma
+                        breve expllisicação sobre o use delas:
+                    </p>
+                    <ul>
+                        <li>
+                            <h5 class="escrita"><b>Var Map</b></h5>
+                            <p style="font-size: 15px;">É a declaração de uma variável que armazena uma instância de
+                                algum elemento do mapa.</p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>L.map</b></h5>
+                            <ul>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.</b> : é um atalho para acessar toda as funções e
+                                        classes
+                                        do Leaflet</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.map</b> : é um exemplo de uma função</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>L.tileLayer e attribution</b></h5>
+                            <ul>
+                                <li>
+                                    <p style="font-size: 15px;"><b>L.tileLayer</b> : é a função para criar a camada de
+                                        tiles</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 15px;"><b>attribution</b> : É o credito dos criadores do mapa
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>setView([0, 0], 1)</b></h5>
+                            <p style="font-size: 15px;">([lat,lng], zoom), lat: latitude; lng: longitude;
+                            </p>
+                        </li>
+                    </ul>
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-4">
@@ -259,38 +386,50 @@
 
         <div class="row">
             <div class="col-12">
-        <div class="pric">
-            <h3 id="ex7" class="titulos"> 6. Como trocar de Camada?Como apaenas o que eu quero em um mapa?</h3>
-            <p class="escrita">Abaixo, você pode observar que, ao lidar com várias camadas de mapa, é possível criar
-                um controle de camadas para alterá-las simultaneamente. Isso permite que os usuários alternem entre diferentes estilos de mapa de forma
-                conveniente.
-            </p>
-            <div class="basic-code" style="color: black;">
-                <p class="basic-text">
-                    <span style="color: orange;">var</span> <span style="color: blue;">baseLayers</span> = { <br>
-                    "<span style="color: blue;">OpenStreetMap</span>": osm, <br>
-                    "<span style="color: blue;">Stadia Dark</span>": Stadia_AlidadeSmoothDark, <br>
-                    }; <br> <br>
-                    <span style="color: orange;">var</span> <span style="color: blue;">overlays</span> = { <br>
-                    "<span style="color: blue;">Marker - 1</span>": L.marker([51.5, -0.08], { icon: greenIcon }), <br>
-                    "<span style="color: blue;">Marker - 2</span>": L.marker([51.5, -0.09], { icon: redIcon }), <br>
-                    "<span style="color: blue;">Marker - 3</span>": L.marker([51.5, -0.10], { icon: orangeIcon }), <br>
-                    "<span style="color: blue;">Circulo</span>": circle, <br>
-                    "<span style="color: blue;">Poligono</span>": polygon <br>
-                    };
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <a href="ICJ_LayerControl.html" target="_blank"><button class="btn btn-secondary button-exemplos">Ver
-                        Exemplo</button></a>
+                <div class="pric">
+                    <h3 id="ex7" class="titulos"> 6. Como trocar de Camada?Como apaenas o que eu quero em um mapa?</h3>
+                    <p class="escrita">Abaixo, você pode observar que, ao lidar com várias camadas de mapa, é possível
+                        criar
+                        um controle de camadas para alterá-las simultaneamente. Isso permite que os usuários alternem
+                        entre diferentes estilos de mapa de forma
+                        conveniente.
+                    </p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            <span style="color: orange;">var</span> <span style="color: blue;">baseLayers</span> = {
+                            <br>
+                            "<span style="color: blue;">Nome que será apresentado </span>": Nome do var que possui um
+                            elemento, como marcador um marcador , <br>
+                            "<span style="color: blue;">OpenStreetMap</span>": osm, <br>
+                            "<span style="color: blue;">Stadia Dark</span>": Stadia_AlidadeSmoothDark, <br>
+                            }; <br> <br>
+                            <span style="color: orange;">var</span> <span style="color: blue;">overlays</span> = { <br>
+                            "<span style="color: blue;">Nome Apresentado</span>": nome do marcador, zona e etc..<br>
+
+                            "<span style="color: blue;">Marker - 1</span>": L.marker([51.5, -0.08], { icon: greenIcon
+                            }), <br>
+                            "<span style="color: blue;">Marker - 2</span>": L.marker([51.5, -0.09], { icon: redIcon }),
+                            <br>
+                            "<span style="color: blue;">Marker - 3</span>": L.marker([51.5, -0.10], { icon: orangeIcon
+                            }), <br>
+                            "<span style="color: blue;">Circulo</span>": circle, <br>
+                            "<span style="color: blue;">Poligono</span>": polygon <br>
+                            };
+                            <br>
+                            L.control.layers(<span style="color: blue;">baseLayers</span>, <span
+                                style="color: blue;">overlays</span>).addTo(map);
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <a href="ICJ_LayerControl.html" target="_blank"><button
+                                    class="btn btn-secondary button-exemplos">Ver
+                                    Exemplo</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p>
-            </p>
-        </div>
-    </div>
         </div>
         <div class="pric">
             <h3 id="ex8" class="titulos"> O que é o GeoJSON?</h3>
@@ -298,9 +437,9 @@
                 geográficas do nosso
                 planeta em
                 formato de código. Ele é baseado no JSON (JavaScript Object Notation), proporcionando uma maneira
-                eficiente de representar
+                eficiente de redivsentar
                 e compartilhar dados geoespaciais.</p>
-            <p class="escrita">Um exemplo de uso do GeoJSON é para representar dados geográficos em mapas
+            <p class="escrita">Um exemplo de uso do GeoJSON é para redivsentar dados geográficos em mapas
                 interativos da web. Por
                 exemplo,
                 você pode usar o GeoJSON para marcar locais específicos, desenhar áreas geográficas, como estados ou
@@ -309,165 +448,461 @@
                 criar
                 visualizações
                 interativas e informativas.</p>
+            <h6 class="titulos"> Exemplo de GeoJSON</h6>
+            <img src="images/exemploGeoJSON.png" alt="Imagem do GeoJSON">
         </div>
-        <div class="pric">
-            <h3 id="ex9" class="titulos">7. Como colocar GeoJSON em meu mapa?</h3>
-            <p class="escrita">Voce pode importar poligonos e marcacoes de Json, atraves do GeoJson.io, podendo
-                criar arquivos em JS e
-                geoJson,para colocar em seu mapa.
-            </p>
-            <div class="basic-code" style="color: black;">
-                < script src="Data/linha.js">
-                </script>
-                    < script src="Data/poligono.js">
-                    </script>
-                        < script src="Data/pontos.js">
-                        </script>
-                            <span style="color: orange;">var</span> <span style="color: blue;">linhaData</span> =
-                            L.geoJSON(linhaJSON).addTo(map);
 
-                            <span style="color: orange;">var</span> <span style="color: blue;">poligonoData</span> =
-                            L.geoJSON(poligonoJSON, {
-                            onEachFeature: function (feature, layer) {
-                            layer.bindPopup('<b>Isso é um </b>' + feature.properties.name);
-                            },
-                            style: {
-                            fillColor: 'red',
-                            fillOpacity: 0.1,
-                            color: 'yellow',
-                            }
-                            }).addTo(map);
+        <div class="row">
+            <div class="col-12">
+                <div class="pric">
+                    <h3 id="ex9" class="titulos">7. Como colocar GeoJSON em meu mapa?</h3>
+                    <p class="escrita">Voce pode importar poligonos e marcacoes de Json, atraves do GeoJson.io, podendo
+                        criar arquivos em JS e geoJson,para colocar em seu mapa. Escolha a exportação como .js assim
+                    </p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            fetch(<span style="color: blue;">'Data/linha.geojson'</span>) <br>
+                            .then(<span style="color: orange;">response</span> => {<br>
+                            &nbsp;&nbsp;if (!<span style="color: orange;">response</span>.ok) {<br>
+                            &nbsp;&nbsp;throw new Error(<span style="color: orange;">'A network diz que tem algo
+                                &nbsp;&nbsp;errado!'</span>);<br>
+                            &nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;return <span style="color: orange;">response</span>.json();<br>
+                            }) <br><br>
+                            .then(<span style="color: orange;">data</span> => { <br>
+                            &nbsp;&nbsp;L.geoJSON(<span style="color: orange;">data</span>, { <br>
+                            &nbsp;&nbsp;style: function () { <br>
+                            &nbsp;&nbsp; return { color: <span style="color: blue;">'black'</span> }; <br>
+                            &nbsp;&nbsp;} <br>
+                            }).bindPopup(function () { <br>
+                            &nbsp;&nbsp;return <span style="color: blue;">"Rota Feita"</span>; <br>
+                            &nbsp;&nbsp;}).addTo(map);<br>
+                            })<br><br>
+                            .catch(error => {<br>
+                            console.error(<span style="color: blue;">'Houve um problema com a requisição Fetch:'</span>,
+                            error);<br>
+                            });
+                        </p>
+                    </div>
+                    <h5 class="escrita">Carregamento de Multiplos arquivos GeoJSON</h5>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-code" style="color: black;">
+                            const geojsonFiles = [ <br>
+                            fetch('Data/linha.geojson'),<br>
+                            fetch('Data/pontos.geojson'), <br>
+                            fetch('Data/poligono.geojson') <br>
+                            ]; <br><br>
+                            Promise.all(geojsonFiles) <br>
+                            .then(<span style="color: orange;">responses</span> => { <br>
+                            &nbsp;&nbsp;// Verifica se todas as respostas foram bem-sucedidas <br>
+                            &nbsp;&nbsp;<span style="color: orange;">responses</span>.forEach(<span
+                                style="color: orange;">response</span> => { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (!<span style="color: orange;">response</span>.ok) { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(<span style="color: orange;">'A network
+                                diz que tem algo errado!'</span>); <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;}); <br><br>
 
-                            <span style="color: orange;">var</span> <span style="color: blue;">pontoData</span> =
-                            L.geoJSON(pontosJSON).addTo(map);
+                            &nbsp;&nbsp;// Converte todas as respostas em JSON <br>
+                            &nbsp;&nbsp;return Promise.all(<span style="color: orange;">responses</span>.map(<span
+                                style="color: orange;">response</span> => <span
+                                style="color: orange;">response</span>.json())); <br>
+                            }) <br><br>
+
+                            .then(<span style="color: orange;">dataArray</span> => { <br>
+                            &nbsp;&nbsp;// Adiciona cada GeoJSON ao mapa <br>
+                            &nbsp;&nbsp;<span style="color: orange;">dataArray</span>.forEach(<span
+                                style="color: orange;">data</span> => { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;L.geoJSON(<span style="color: orange;">data</span>, { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: function () { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return { color: <span
+                                style="color: blue;">'black'</span> }; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}).bindPopup(function () { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: blue;">"Rota Feita"</span>;
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}).addTo(map); <br>
+                            &nbsp;&nbsp;}); <br>
+                            }) <br><br>
+
+                            .catch(<span style="color: orange;">error</span> => { <br>
+                            console.error(<span style="color: blue;">'Houve um problema com a requisição Fetch:'</span>,
+                            <span style="color: orange;">error</span>); <br>
+                            });
+
+                        </p>
+                    </div>
+                    </p>
+                    <p class="escrita">
+                        Durante o codigo pode ser visto a utilização de novas "tags", uma
+                        breve expllisicação sobre o use delas:
+                    </p>
+                    <ul>
+                        <li>
+                            <h5 class="escrita"><b>fetch('Data/linha.geojson')</b></h5>
+                            <p style="font-size: 15px;">A função fetch é uma API do JavaScript que permite fazer
+                                requisições assíncronas a recursos de rede, como arquivos ou APIs.</p>
+                            <p style="font-size: 15px;">Neste caso: Está sendo feita uma requisição para buscar o
+                                arquivo linha.geojson que está localizado na pasta Data. A função retornará uma Promise
+                                que resolve a resposta da requisição.</p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>Promise</b></h5>
+                            <p style="font-size: 15px;">é um objeto que representa a eventual conclusão (ou falha) de
+                                uma operação assíncrona e seu valor resultante. </p>
+                            <p style="font-size: 15px;">Ela tem 3 status</p>
+                            <ul>
+                                <il>
+                                    <p style="font-size: 15px;">Pending (Pendente): O estado inicial, aguardando que a
+                                        operação assíncrona seja concluída.</p>
+                                </il>
+                                <il>
+                                    <p style="font-size: 15px;">Fulfilled (Cumprida): A operação foi concluída com
+                                        sucesso e a promessa possui um resultado.</p>
+                                </il>
+                                <il>
+                                    <p style="font-size: 15px;">Rejected (Rejeitada): A operação falhou e a promessa
+                                        possui um motivo para a falha.</p>
+                                </il>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>Operação Assíncrona </b></h5>
+                            <p style="font-size: 15px;">É uma operação que é iniciada e permite que outras operações
+                                continuem em execução enquanto aguarda a conclusão</p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>.then(response => { ... })</b></h5>
+                        <li>
+                            <p style="font-size: 15px;">É usado para tratar a resposta da Promise retornada pelo fetch.
+                            </p>
+                        </li>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>if (!response.ok) { throw new Error('A network diz que tem algo
+                                    errado!'); }</b></h5>
+                            <ul>
+                                <li>
+                                    <p style="font-size: 15px;"><b>!response.ok</b> : procura se o status do response é
+                                        diferente de ok</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 15px;"><b>throw new Error</b> : Caso o status for diferente de
+                                        ok, é para "jogar um erro" no console
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>return response.json();</b></h5>
+                            <p style="font-size: 15px;">É usado para ler o corpo da resposta e convertê-lo de GeoJSON
+                                para um objeto JavaScript.
+                            </p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>.catch(error => { console.error('Houve um problema com a requisição
+                                    Fetch:', error); });</b></h5>
+                            <p style="font-size: 15px;"> Se houver um erro (como uma falha na rede ou um erro ao
+                                processar a resposta), uma mensagem de erro será exibida no console</p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>Promise.all(...)</b></h5>
+                            <p style="font-size: 15px;">É um método que aceita um array de Promises e retorna uma única
+                                Promise
+                            </p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>responses.forEach(response => { if (!response.ok) { throw new
+                                    Error('A network diz que tem algo errado!'); } });</b></h5>
+                            <p style="font-size: 15px;">Verifica o status de cada resposta. Se response.ok for false
+                                para qualquer uma das respostas, da erro. </p>
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>return Promise.all(responses.map(response => response.json()));</b>
+                            </h5>
+                            <p style="font-size: 15px;">Cria um novo array de Promises, cada uma delas convertendo uma
+                                resposta do geoJSON. </p>
+                        </li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <a href="ICJ_GeoJson.html" target="_blank"><button
+                                    class="btn button-exemplos btn-secondary">Ver
+                                    Exemplo</button></a>
+                            <a href="ICJ_GeoJsonMultiplos.html" target="_blank"><button
+                                    class="btn button-exemplos btn-secondary">Ver
+                                    Exemplo de GeoJSON Multiplos</button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </p>
-            <p><a href="ICJ_MaisGeoJson.html" target="_blank"><button class="btn btn-secondary">Ver
-                        Exemplo</button></a>
-            </p>
-
         </div>
 
-        <div class="pric">
-            <h3 id="ex10" class="titulos">8. Como colocar a barra de pesquisa?</h3>
-            <p class="escrita">Para colocar a barra de pesquisa é simples, apenas um passo é necessitado:</p>
-            <pre class="basic-code" style="color: black;">
-                L.Control.geocoder().addTo(map);
-            </pre>
-            </p>
-            <p><a href="ICJ_BarraPesquias.html" target="_blank"><button class="btn btn-secondary">Ver
-                        Exemplo</button></a>
-            </p>
+        <div class="row">
+            <div class="col-12">
+                <div class="pric">
+                    <h3 id="ex10" class="titulos">8. Como colocar a barra de pesquisa?</h3>
+                    <p class="escrita">Para colocar a barra de pesquisa é simples, apenas um passo é necessitado:</p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            L.Control.geocoder().addTo(map);
+                        </p>
+                    </div>
+                    </p>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <a href="ICJ_BarraPesquias.html" target="_blank"><button
+                                    class="btn button-exemplos btn-secondary">Ver
+                                    Exemplo</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="pric">
+                    <h3 id="ex11" class="titulos">9. Como colocar um marcador que engloba outros marcadores e me mostra
+                        quantos tem em determinada regiâo</h3>
+
+                    <p class="escrita"> Para realizar este feito, voce deve baixar a pasta de MarkerCluster
+                        disponibilizada
+                        neste link: '<a
+                            href="https://github.com/Leaflet/Leaflet.markercluster">https://github.com/Leaflet/Leaflet.markercluster</a>'
+                        apos baixar, voce pega a pasta dist e coloque em sua pasta do projeto, importando em seu projeto
+                        os
+                        scripts e links
+                        necessários para o funcionamento(Este agrupamento de marcadores é comumento é usado quando há
+                        muito
+                        marcadores devido a algum arquivo sendo json ou csv, está sendo utilizado
+                        uma importação de um arquivo json para criar estes marcadores, algo que já foi ensinado acima).
+                        Após
+                        disto terá que ser feito as seguintes comandas:
+                        <span style="color: rgb(43, 160, 82)">
+                            <br> <br>
+                            link rel="stylesheet" href="./dist/MarkerCluster.css"
+                            <br>
+                            link rel="stylesheet" href="./dist/MarkerCluster.Default.css"
+                            <br>
+                            Importação do seu arquivo que tem muitas Coordenadas
+                            <br>
+                            script src="./dist/leaflet.markercluster.js" /script
+                        </span>
+                    </p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            <span style="color: orange;">const</span> <span style="color: blue;">estilo </span>= { <br>
+                            <span style="color: blue;">radius:</span> 8, <br>
+                            <span style="color: blue;">fillcolor:</span> "#ff7800", <br>
+                            <span style="color: blue;">color:</span> "#000", <br>
+                            <span style="color: blue;">weight:</span> 1, <br>
+                            <span style="color: blue;">opacity:</span> 1, <br>
+                            <span style="color: blue;">fillOpacity: </span> 0.8 }; <br>
+                            <br>
+                            <span style="color: orange;">const</span> <span style="color: blue;">markers</span> =
+                            L.markerClusterGroup(); <br>
+                            L.geoJSON(data, { <br>
+                            &nbsp; &nbsp; pointToLayer: function (feature, latlgn) {<br>
+                            &nbsp; &nbsp;<span style="color: orange;">return</span>
+                            markers.addLayer(L.circleMarker(latlgn, estilo));
+                            }
+                            <br> }).addTo(map);
+                            <br><br>
+                            map.addLayer(markers);
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <a href="ICJ_MarkerCluster.html" target="_blank"><button
+                                    class="btn button-exemplos btn-secondary">Ver
+                                    Exemplo</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="pric">
-            <h3 id="ex11" class="titulos">9. Como colocar um marcador que engloba outros marcadores e me mostra
-                quantos tem em determinada regiâo</h3>
-
-            <p class="escrita"> Para realizar este feito, voce deve baixar a pasta de MarkerCluster disponibilizada
-                neste link: '<a
-                    href="https://github.com/Leaflet/Leaflet.markercluster">https://github.com/Leaflet/Leaflet.markercluster</a>'
-                apos baixar, voce pega a pasta dist e coloque em sua pasta do projeto, importando em seu projeto os
-                scripts e links
-                necessários para o funcionamento(Este agrupamento de marcadores é comumento é usado quando há muito
-                marcadores devido a algum arquivo sendo json ou csv, está sendo utilizado
-                uma importação de um arquivo json para criar estes marcadores, algo que já foi ensinado acima). Após
-                disto terá que ser feito as seguintes comandas:
-            </p>
-            <pre class="basic-code" style="color: black;">
-                < link rel="stylesheet" href="./dist/MarkerCluster.css">  
-                < link rel="stylesheet" href="./dist/MarkerCluster.Default.css">
-                < script src="Data/data.js"></script>
-                < script src="./dist/leaflet.markercluster.js"></script> 
-
-                <span style="color: orange;">const</span> geojsonmarkerOptions = {
-                    radius: 8,
-                    fillcolor: "#ff7800",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                };
-                
-                <span style="color: orange;">const</span> <span style="color: blue;">markers</span> = L.markerClusterGroup();
-                L.geoJSON(data, {
-                    pointToLayer: function (feature, latlgn) {
-                        <span style="color: orange;">return</span> markers.addLayer(L.circleMarker(latlgn, geojsonmarkerOptions));
-                    }
-                }).addTo(map);
-                
-                map.addLayer(markers);
-            </pre>
-            </p>
-            <p><a href="ICJ_MarkerCluster.html" target="_blank"><button class="btn btn-secondary">Ver
-                        Exemplo</button></a>
-            </p>
+        <div class="row">
+            <div class="col-12">
+                <div class="pric">
+                    <h3 id="ex12" class="titulos"> O que é CSV?</h3>
+                    <p class="escrita">CSV é a sigla para Comma Separated Values (em português, valores separados por
+                        vírgulas). Um arquivo CSV
+                        é um
+                        arquivo de texto simples que armazena informações de planilhas e tabelas. O conteúdo geralmente
+                        é
+                        uma
+                        tabela de
+                        texto, números ou datas.</p>
+                    <p class="escrita">Em geral, a primeira linha em um arquivo CSV contém os rótulos das colunas da
+                        tabela.
+                        Cada uma das linhas
+                        subsequentes redivsenta uma linha da tabela. Vírgulas separam cada célula na linha, que é a
+                        razão
+                        para o
+                        nome do
+                        formato.</p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            Country, Name, lat, lng, Altitude <br>
+                            United States, New York City, 40.7142691, -74.0059738, 2.0 <br>
+                            United States, Los Angeles, 34.0522342, -118.2436829, 115.0
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="pric">
+                    <h3 id="ex13" class="titulos">10. Como colocar dados de um CSV no mapa?</h3>
+                    <p class="escrita">Para realizar tal façanha será divciso importar 2 bibliotecas "novas" o JQuery e
+                        PapaParse, ambas seram
+                        utilizadas para ler determinado CSV, de sua escolha.</p>
+                    <div class="basic-code" style="color: black;">
+                        <p class="basic-text">
+                            fetch(<span style="color: blue;">'Data/datacsv.csv'</span>) <br>
+                            .then(<span style="color: orange;">response</span> => {<br>
+                            &nbsp;&nbsp;if (!<span style="color: orange;">response</span>.ok) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;throw new Error(<span style="color: orange;">'Erro na rede ao tentar
+                                buscar o arquivo CSV'</span>);<br>
+                            &nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;return <span style="color: orange;">response</span>.text();<br>
+                            }) <br><br>
+                            .then(<span style="color: blue;">data</span> => {<br>
+                            &nbsp;&nbsp;var data = Papa.parse(<span style="color: blue;">csvString</span>, { header:
+                            true, dynamicTyping: <span style="color: blue;">true</span>, delimiter: <span
+                                style="color: blue;">"|"</span> }).data;<br>
+                            &nbsp;&nbsp;for (var i = 0; i < data.length; i++) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;var row = data[i];<br>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;if (isNaN(<span style="color: orange;">row</span>.lat) ||
+                                isNaN(<span style="color: orange;">row</span>.lng)) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(<span
+                                    style="color: orange;">"Coordenadas inválidas para o marcador:"</span>, <span
+                                    style="color: rgb(8, 0, 255);">row</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">continue</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;if (<span style="color: blue;">row</span>.lat === <span
+                                    style="color: blue;">null</span> || <span style="color: blue;">row</span>.lng ===
+                                <span style="color: blue;">null</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(<span
+                                    style="color: orange;">"Coordenadas ausentes para o marcador:"</span>, <span
+                                    style="color: orange;">row</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">continue</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;var marker = L.marker([row.lat, row.lng], {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 1<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}).bindPopup(<span style="color: blue;">row</span>.Name);<br>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;marker.addTo(map);<br>
+                                &nbsp;&nbsp;}<br>
+                                })<br><br>
+                                .catch(<span style="color: orange;">error</span> => {<br>
+                                &nbsp;&nbsp;console.error(<span style="color: blue;">'Houve um problema com a requisição
+                                    Fetch:'</span>, <span style="color: orange;">error</span>);<br>
+                                });
 
-        <div class="pric">
-            <h3 id="ex12" class="titulos"> O que é CSV?</h3>
-            <p class="escrita">CSV é a sigla para Comma Separated Values (em português, valores separados por
-                vírgulas). Um arquivo CSV
-                é um
-                arquivo de texto simples que armazena informações de planilhas e tabelas. O conteúdo geralmente é
-                uma
-                tabela de
-                texto, números ou datas.</p>
-            <p class="escrita">Em geral, a primeira linha em um arquivo CSV contém os rótulos das colunas da tabela.
-                Cada uma das linhas
-                subsequentes representa uma linha da tabela. Vírgulas separam cada célula na linha, que é a razão
-                para o
-                nome do
-                formato.</p>
-            <pre class="basic-code" style="color: black;">
-                Country, Name, lat, lng, Altitude
-                United States, New York City, 40.7142691, -74.0059738, 2.0
-                United States, Los Angeles, 34.0522342, -118.2436829, 115.0
-            </pre>
+                        </p>
+                    </div>
+                    <p class="escrita">
+                        Durante o codigo pode ser visto a utilização de novas "tags", uma
+                        breve expllisicação sobre o use delas:
+                    </p>
+                    <ul>
+                        <li>
+                            <h5 class="escrita"><b>Continue</b></h5>
+                            Uma declaração JavaScript utilizada dentro de loops para pular a
+                            posição atual e continuar com a próxima posição do loop
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>row.lat e row.lng</b></h5>
+                            São acessos aos campos "lat" e "lng" do objeto "row", que representa
+                            uma linha de dados do CSV analisado.
+                        </li>
+                        <li>
+                            <h5 class="escrita"><b>Papa.parse()</b></h5>
+                            PapaParse é uma biblioteca JavaScript usada para analisar dados CSV.
+                            Ela converte dados CSV em arrays ou objetos JavaScript.
+                        </li>
+                        <li>
+                            <h5 class="escrita">
+                                <b>Parâmetros de configurações usados de um Papa.parse()</b>
+                            </h5>
+                        </li>
+                        <ul>
+                            <li>
+                                <h5 class="escrita"><b>header</b></h5>
+                                Um parâmetro que indica se a primeira linha do CSV contém
+                                cabeçalhos de coluna. Se definido como true, a primeira linha será
+                                interpretada como o cabeçalho da coluna.
+                            </li>
+                            <li>
+                                <h5 class="escrita"><b>dynamicTyping</b></h5>
+                                Um parâmetro que controla se os valores das células devem ser
+                                automaticamente convertidos para os tipos de dados apropriados
+                                (por exemplo, números, booleanos) com base em seu formato. Se
+                                definido como true, Papa.parse() tentará colocar automaticamente
+                                os tipos de dados das células.
+                            </li>
+                            <li>
+                                <h5 class="escrita"><b>delimiter</b></h5>
+                                Um parâmetro que especifica o caractere delimitador utilizado para
+                                separar os campos no CSV. No exemplo, o delimitador é definido
+                                como "|".
+                            </li>
+                        </ul>
+                        <li>
+                            <h5 class="escrita"><b>NaN</b></h5>
+                            NaN é uma abreviação de "Not a Number", é um valor especial em
+                            JavaScript que representa um valor que não é um número válido.
+                        </li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <a href="ICJ_CarregarCSV.html" target="_blank"><button
+                                    class="btn btn-secondary button-exemplos btn-block">Ver
+                                    Exemplo</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="pric">
-            <h3 id="ex13" class="titulos">10. Como colocar dados de um CSV no mapa?</h3>
-            <p class="escrita">Para realizar tal façanha será preciso importar 2 bibliotecas "novas" o JQuery e
-                PapaParse, ambas seram
-                utilizadas para ler determinado CSV, de sua escolha.</p>
-            <pre class="basic-code" style="color: black;">
-
-                <span style="color:orange">$.get</span>(<span style="color:blue">'Data/datacsv.csv'</span>, function (csvString) {
-                    <span style="color:orange">var</span> <span style="color:blue">data</span> = Papa.parse(csvString, { 
-                        header: true, dynamicTyping: true, delimiter: "<span style='color:blue'>|</span>" }).data;
-                    for (var <span style="color:blue">i</span> = 0; i < data.length; i++) {
-                        <span style="color:orange">var</span> <span style="color:blue">row</span>  = data[i];
-                
-                        if (<span style="color:blue">isNaN</span>(row.lat) || <span style="color:blue">isNaN</span>(row.lng)) {
-                            console.log("<span style='color:blue'>Coordenadas inválidas para o marcador:</span>", row);
-                            <span style="color:orange">continue</span>;
-                        }
-                
-                        if (row.lat === <span style="color:blue">null</span> || row.lng === <span style="color:blue">null</span>) {
-                            console.log("<span style='color:blue'>Coordenadas ausentes para o marcador:</span>", row);
-                            <span style="color:orange">continue</span>;
-                        }
-                        
-                        var <span style="color:blue"> visitado </span> = row.Visitado ? row.Visitado : 0;
-
-                        var <span style="color:blue">marker</span> = L.marker([row.lat, row.lng], {
-                            opacity: 1
-                        }).bindPopup(row.Name);
-                
-                        marker.addTo(map);
-                    }
-                });
-                
-            </pre>
-            <p><a href="ICJ_CarregarCSV copy.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
-                        Exemplo</button></a></p>
-
-
-        </div>
-
     </div>
+
+    <!-- <script>
+        // Função para abrir a versão selecionada
+        function openVersion(evt, versionName) {
+            // Ocultar todos os elementos com a classe "tabcontent"
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remover a classe "active" de todos os links de texto
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Mostrar a versão atual e adicionar a classe "active" ao link de texto clicado
+            document.getElementById(versionName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Abrir a aba padrão (Versão Limpa) quando a página carregar
+        document.getElementById("defaultOpen").click();
+    </script> -->
 </body>
 
 </html>

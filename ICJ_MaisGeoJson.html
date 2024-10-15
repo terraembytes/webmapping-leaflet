@@ -51,7 +51,6 @@
     var redIcon = new LeafletIcon({ iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-red.png' });
     var orangeIcon = new LeafletIcon({ iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-orange.png' });
 
-    // Adicionando marcadores
     L.marker([51.5, -0.08], { icon: greenIcon }).addTo(map).bindPopup("<b>Eae Carinha1 </b> <br> Eu sou um Marcador").openPopup();
     L.marker([51.5, -0.09], { icon: redIcon }).addTo(map).bindPopup("<b>Eae Carinha2 </b> <br> Eu sou um Marcador").openPopup();
     L.marker([51.5, -0.10], { icon: orangeIcon }).addTo(map).bindPopup("<b>Eae Carinha3 </b> <br> Eu sou um Marcador").openPopup();
@@ -109,8 +108,7 @@
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
 
-    //Mais GEOJSON
-
+    
     var linhaData = L.geoJSON(linhaJSON).addTo(map);
     var poligonoData = L.geoJSON(poligonoJSON, {
         onEachFeature: function (feature, layer) {
