@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camada do Mapa</title>
+    <link rel="stylesheet" href="Leaflet/leaflet.css" />
+    <script src="Leaflet/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+    <style>
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <script>
+        const API_KEY = '698ac60c05434cdc813a973779ae6763';
+        var map = L.map('map', {
+            center: [40.57, -74.69],
+            zoom: 9
+        });
+
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        async function geocodeAddress(address) {
+            const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=${API_KEY}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.results.length > 0) {
+                    const { lat, lng } = data.results[0].geometry;
+                    return { lat, lng };
+                } else {
+                    console.error("Nenhum resultado encontrado para o endereço:", address);
+                }
+            } catch (error) {
+                console.error("Erro ao geocodificar o endereço:", error);
+            }
+            return null;
+        }
+
+        async function loadAndGeocodeCSV() {
+            try {
+                const response = await fetch('Data/ListagemAlunos.csv');
+                const csvString = await response.text();
+                const data = Papa.parse(csvString, { header: true, dynamicTyping: true, delimiter: "," }).data;
+
+                for (let i = 0; i < data.length; i++) {
+                    const row = data[i];
+                    const endereco = `${row.Bairro}, ${row.Cidade}`;  
+                    if (endereco.trim() === "") {
+                        console.warn("Endereço vazio para a linha:", row);
+                        continue;
+                    }
+
+                    const coords = await geocodeAddress(endereco);
+                    if (coords) {
+                        L.marker([coords.lat, coords.lng])
+                            .addTo(map)
+                            .bindPopup(`Nome: ${row.Nome}`);
+                    }
+                }
+            } catch (error) {
+                console.error("Houve um erro ao carregar ou processar o CSV:", error);
+            }
+        }
+        loadAndGeocodeCSV();
+    </script>
+  </body>
+</html>

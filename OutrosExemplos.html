@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="lib\bootstrap-5.3.0\css\bootstrap.min.css" />
-    <script src="https://kit.fontawesome.com/f3dfecc4de.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f3dfecc4de.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="lib\bootstrap-5.3.0\js\bootstrap.min.js"></script>
-    <link rel="icon" href="images/terra25.png" type="image/x-icon">
-    <link rel="stylesheet" href="./Cabecalho/estilo.css">
-    <link rel="stylesheet" href="principal.css">
+    <link rel="icon" href="images/terra25.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./Cabecalho/estilo.css" />
+    <link rel="stylesheet" href="principal.css" />
 
     <title>Mapas interativos</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container-cabecalho">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/terra25.png" width="25px">
-                    <p style="color: black;">Mapas interativos</p>
-                </a>
-            </div>
-            <div class="menu">
-                <nav>
-                    <a href="index.html" style="color: black;">Tutorial</a>
-                    <a href="OutrosExemplos.html" style="color: black;">Outros Exemplos</a>
-                </nav>
-            </div>
-            <div class="redesSociais">
-                <button><i class="fa-brands fa-instagram"></i></button>
-            </div>
+      <div class="container-cabecalho">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/terra25.png" width="25px" />
+            <p style="color: black">Mapas interativos</p>
+          </a>
         </div>
+        <div class="menu">
+          <nav>
+            <a href="index.html" style="color: black">Tutorial</a>
+            <a href="OutrosExemplos.html" style="color: black"
+              >Outros Exemplos</a
+            >
+          </nav>
+        </div>
+      </div>
     </header>
 
-
-
     <div class="container">
-        <h4>Criação de Mapas interativas com Leaflet - Outros Exemplos</h4>
-        <h6 class="text-center">Autores: Adryan Gabriel e Bruno César Vani</h6>
-        <br />
-
-        <div class="indice">
-            <h3 class="mt-2">Índice de Exemplos</h3>
-            <ol>
-                <li>
-                    <a href="#ex1" class="indice">Dados de um CSV no mapa usando MarkerCluster</a>
-                </li>
-                <li>
-                    <a href="#ex2" class="indice">Dados de um CSV no map, com marcadores que tem popup</a>
-                </li>
-
-            </ol>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="title">Criação de Mapas interativos com Leaflet</h4>
+          <h6 class="text-center">
+            Autores: Adryan Gabriel e Bruno César Vani
+          </h6>
+          <br />
         </div>
+        <div class="col-12 p-1">
+          <div class="indice">
+            <h2 class="mt-2 p-2 m-2">Índice:</h2>
+            <ol>
+              <li><a href="#ex1" class="indice">Dados CSV em um mapa</a></li>
+              <li>
+                <a href="#ex2" class="indice"
+                  >Dados CSV em um mapa usando Marker Cluster</a
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
 
-        <div class="pric">
-            <h3 id="ex2" class="titulos">
-                Dados de um CSV no map, com marcadores que tem popup
+      <div class="row">
+        <div class="col-12">
+          <div class="pric mt-4">
+            <h3 id="ex1" class="titulos">
+              Dados de um CSV no map, com marcadores que tem popup
             </h3>
             <p class="escrita">
-                Para realizar tal façanha será preciso importar 2 bibliotecas "novas"
-                o JQuery e PapaParse, ambas seram utilizadas para ler determinado CSV,
-                de sua escolha.
+              Para realizar tal façanha será preciso importar 2 bibliotecas
+              "novas" o JQuery e PapaParse, ambas seram utilizadas para ler
+              determinado CSV, de sua escolha.
             </p>
             <pre class="basic-code" style="color: black">
 
@@ -82,82 +89,117 @@
                 
             </pre>
             <p class="escrita">
-                Durante o codigo pode ser visto a utilização de novas "tags", uma
-                breve expllisicação sobre o use delas:
+              Durante o codigo pode ser visto a utilização de novas "tags", uma
+              breve expllisicação sobre o use delas:
             </p>
 
             <ul>
+              <li>
+                <h5 class="escrita"><b>Continue</b></h5>
+                Uma declaração JavaScript utilizada dentro de loops para pular a
+                posição atual e continuar com a próxima posição do loop
+              </li>
+              <li>
+                <h5 class="escrita"><b>$.get()</b></h5>
+                É uma função do jQuery utilizada para realizar uma requisição
+                AJAX para carregar dados de um servidor. Neste caso, ela é usada
+                para carregar o arquivo CSV contendo os dados dos marcadores.
+              </li>
+              <li>
+                <h5 class="escrita"><b>row.lat e row.lng</b></h5>
+                São acessos aos campos "lat" e "lng" do objeto "row", que
+                representa uma linha de dados do CSV analisado.
+              </li>
+              <li>
+                <h5 class="escrita"><b>Papa.parse()</b></h5>
+                PapaParse é uma biblioteca JavaScript usada para analisar dados
+                CSV. Ela converte dados CSV em arrays ou objetos JavaScript.
+              </li>
+              <li>
+                <h5 class="escrita">
+                  <b>Parâmetros de configurações usados de um Papa.parse()</b>
+                </h5>
+              </li>
+              <ul>
                 <li>
-                    <h5 class="escrita"><b>Continue</b></h5>
-                    Uma declaração JavaScript utilizada dentro de loops para pular a
-                    posição atual e continuar com a próxima posição do loop
+                  <h5 class="escrita"><b>header</b></h5>
+                  Um parâmetro que indica se a primeira linha do CSV contém
+                  cabeçalhos de coluna. Se definido como true, a primeira linha
+                  será interpretada como o cabeçalho da coluna.
                 </li>
                 <li>
-                    <h5 class="escrita"><b>$.get()</b></h5>
-                    É uma função do jQuery utilizada para realizar uma requisição AJAX
-                    para carregar dados de um servidor. Neste caso, ela é usada para
-                    carregar o arquivo CSV contendo os dados dos marcadores.
+                  <h5 class="escrita"><b>dynamicTyping</b></h5>
+                  Um parâmetro que controla se os valores das células devem ser
+                  automaticamente convertidos para os tipos de dados apropriados
+                  (por exemplo, números, booleanos) com base em seu formato. Se
+                  definido como true, Papa.parse() tentará colocar
+                  automaticamente os tipos de dados das células.
                 </li>
                 <li>
-                    <h5 class="escrita"><b>row.lat e row.lng</b></h5>
-                    São acessos aos campos "lat" e "lng" do objeto "row", que representa
-                    uma linha de dados do CSV analisado.
+                  <h5 class="escrita"><b>delimiter</b></h5>
+                  Um parâmetro que especifica o caractere delimitador utilizado
+                  para separar os campos no CSV. No exemplo, o delimitador é
+                  definido como "|".
                 </li>
-                <li>
-                    <h5 class="escrita"><b>Papa.parse()</b></h5>
-                    PapaParse é uma biblioteca JavaScript usada para analisar dados CSV.
-                    Ela converte dados CSV em arrays ou objetos JavaScript.
-                </li>
-                <li>
-                    <h5 class="escrita">
-                        <b>Parâmetros de configurações usados de um Papa.parse()</b>
-                    </h5>
-                </li>
-                <ul>
-                    <li>
-                        <h5 class="escrita"><b>header</b></h5>
-                        Um parâmetro que indica se a primeira linha do CSV contém
-                        cabeçalhos de coluna. Se definido como true, a primeira linha será
-                        interpretada como o cabeçalho da coluna.
-                    </li>
-                    <li>
-                        <h5 class="escrita"><b>dynamicTyping</b></h5>
-                        Um parâmetro que controla se os valores das células devem ser
-                        automaticamente convertidos para os tipos de dados apropriados
-                        (por exemplo, números, booleanos) com base em seu formato. Se
-                        definido como true, Papa.parse() tentará colocar automaticamente
-                        os tipos de dados das células.
-                    </li>
-                    <li>
-                        <h5 class="escrita"><b>delimiter</b></h5>
-                        Um parâmetro que especifica o caractere delimitador utilizado para
-                        separar os campos no CSV. No exemplo, o delimitador é definido
-                        como "|".
-                    </li>
-                </ul>
-                <li>
-                    <h5 class="escrita"><b>NaN</b></h5>
-                    NaN é uma abreviação de "Not a Number", é um valor especial em
-                    JavaScript que representa um valor que não é um número válido.
-                </li>
+              </ul>
+              <li>
+                <h5 class="escrita"><b>NaN</b></h5>
+                NaN é uma abreviação de "Not a Number", é um valor especial em
+                JavaScript que representa um valor que não é um número válido.
+              </li>
             </ul>
 
-            <p>
-                <a href="ICJ_CarregarCSVCluster.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
-                        Exemplo</button></a>
-            </p>
+            <div class="row">
+              <div class="col-4"></div>
+              <div class="col-4">
+                <p>
+                  <a href="ICJ_CarregarCSVCluster.html" target="_blank"
+                    ><button class="btn btn-secondary btn-block">
+                      Ver Exemplo
+                    </button></a
+                  >
+                </p>
+              </div>
+              <div class="col-4"></div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="pric">
-            <h3 id="ex1" class="titulos">
-                Dados de um CSV no mapa usando MarkerCluster
+      <div class="row">
+        <div class="col-12">
+          <div class="pric mt-4">
+            <h3 id="ex2" class="titulos">
+              Dados de um CSV no mapa usando API de endereços
             </h3>
             <p class="escrita">
-                Para realizar tal façanha será preciso importar 2 bibliotecas "novas"
-                o JQuery e PapaParse, ambas seram utilizadas para ler determinado CSV,
-                de sua escolha.
+              Para criar um mapa usando api de endereços, primeiramente deve
+              saber qual api deve ser usada, cada uma das APIs tem seu ponto
+              forte e ponto fraco, como a API do Google Maps que é muito boa,
+              porém é paga, ou a API do OpenCage que é gratuita porém tem
+              problemas do performance, pois so consegue fazer uma requisição
+              por segundo. A programação aqui é feita com base na API do
+              OpenCage e caso queira usar outra API pode fazer modificações com
+              base neste projeto
             </p>
-            <pre class="basic-code" style="color: black">
+            <div class="tab">
+              <button class="tablinks" onclick="abrirCodigos(event, 'APIOC')">
+                Open Cage
+              </button>
+              <button class="tablinks" onclick="abrirCodigos(event, 'APIGM')">
+                Google Maps
+              </button>
+            </div>
+
+            <div id="APIGM" class="tabConteudo">
+              <p class="escrita">
+                Para funcionar no google Mpas precisa colocar a chave da API na
+                tag de script!<br />
+                script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=SUA CHAVE">
+                /script>
+              </p>
+              <pre class="basic-code" style="color: black">
 
             <span style="color:orange">function</span> <span style="color:blue">initMap</span>() {
                 map = L.map(<span style="color:blue">'map'</span>, {
@@ -222,21 +264,185 @@
             }
             </pre>
             <p class="escrita">
-                Durante o codigo pode ser visto a utilização da API do google maps, para conseguir uma chave da API deve
-                se cadastrar
-                no google cloud console
+                Durante o codigo pode ser visto a utilização de novas "tags", uma
+                breve expllisicação sobre o use delas:
             </p>
+            <ul>
+                <li>
+                    <h5 class="escrita"><b>callback</b></h5>
+                    <p style="font-size: 15px;"> é o nome dado para funções que são passadas como argumentos para outras funções e executadas depois que alguma ação ou operação for concluída. Um callback é utilizado para garantir que um pedaço de código só será executado depois que outra tarefa assíncrona for completada.</p>
+                </li>
+                <li>
+                    <h5 class="escrita"><b>typeof google</b></h5>
 
-            <p>
-                <a href="ICJ_ListagemAlunos.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
-                        Exemplo</button></a>
+                        <li>
+                            <p style="font-size: 15px;">typeof é um operador em JavaScript usado para verificar o tipo de dado de uma variável.</p>
+                        </li>
+                        <li>
+                            <p style="font-size: 15px;">Ele retorna uma string que indica o tipo de dado de um determinado valor. Ele pode ser útil para verificar se uma variável é, por exemplo, uma string, número, objeto, etc.</p>
+                        </li>
+
+                </li>
+                <li>
+                    <h5 class="escrita"><b>===</b></h5>
+                        <li>
+                            <p style="font-size: 15px;"> O operador === é um operador de comparação em JavaScript. Ele verifica tanto o valor quanto o tipo de duas variáveis.</p>
+                        </li>
+                        <li>
+                            <p style="font-size: 15px;">Para fazer uma comparação exata, sem conversões de tipo implícitas. Ao contrário do ==, que realiza uma comparação de valores e tenta converter os tipos se necessário, === garante que tanto o tipo quanto o valor sejam idênticos.</p>
+                        </li>
+                </li>
+            </ul>
+            </div>
+
+            <div id="APIOC" class="tabConteudo">
+              <pre class="basic-code" style="color: black">
+
+                <span style="color:orange">const</span> API_KEY <span style="color:orange">=</span> <span style="color:green">'698ac60c05434cdc813a973779ae6763'</span>;
+                <span style="color:orange">var</span> map <span style="color:orange">=</span> L.map(<span style="color:blue">'map'</span>, {
+                    center: [<span style="color:blue">40.57</span>, <span style="color:blue">-74.69</span>],
+                    zoom: <span style="color:blue">9</span>
+                });
+
+                <span style="color:orange">var</span> osm <span style="color:orange">=</span> L.tileLayer(<span style="color:green">'https://tile.openstreetmap.org/{z}/{x}/{y}.png'</span>, {
+                    attribution: <span style="color:green">'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'</span>
+                }).addTo(map);
+
+                <span style="color:orange">async</span> <span style="color:orange">function</span> geocodeAddress(<span style="color:blue">address</span>) {
+                    <span style="color:orange">const</span> url <span style="color:orange">=</span> <span style="color:green">`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=${API_KEY}`</span>;
+                    <span style="color:orange">try</span> {
+                        <span style="color:orange">const</span> response <span style="color:orange">=</span> <span style="color:orange">await</span> fetch(url);
+                        <span style="color:orange">const</span> data <span style="color:orange">=</span> <span style="color:orange">await</span> response.json();
+                        <span style="color:orange">if</span> (data.results.length <span style="color:orange">></span> <span style="color:blue">0</span>) {
+                            <span style="color:orange">const</span> { lat, lng } <span style="color:orange">=</span> data.results[<span style="color:blue">0</span>].geometry;
+                            <span style="color:orange">return</span> { lat, lng };
+                        } <span style="color:orange">else</span> {
+                            <span style="color:orange">console</span>.error(<span style="color:blue">"Nenhum resultado encontrado para o endereço:"</span>, address);
+                        }
+                    } <span style="color:orange">catch</span> (error) {
+                        <span style="color:orange">console</span>.error(<span style="color:blue">"Erro ao geocodificar o endereço:"</span>, error);
+                    }
+                    <span style="color:orange">return</span> <span style="color:orange">null</span>;
+                }
+
+        
+                <span style="color:orange">async</span> <span style="color:orange">function</span> loadAndGeocodeCSV() {
+                    <span style="color:orange">try</span> {
+                        <span style="color:orange">const</span> response <span style="color:orange">=</span> <span style="color:orange">await</span> fetch(<span style="color:green">'Data/ListagemAlunos.csv'</span>);
+                        <span style="color:orange">const</span> csvString <span style="color:orange">=</span> <span style="color:orange">await</span> response.text();
+                        <span style="color:orange">const</span> data <span style="color:orange">=</span> Papa.parse(csvString, { header: <span style="color:blue">true</span>, dynamicTyping: <span style="color:blue">true</span>, delimiter: <span style="color:green">","</span> }).data;
+                
+                        <span style="color:orange">for</span> (<span style="color:orange">let</span> i <span style="color:orange">=</span> <span style="color:blue">0</span>; i <span style="color:orange"><</span> data.length; i++) {
+                            <span style="color:orange">const</span> row <span style="color:orange">=</span> data[i];
+                            <span style="color:orange">const</span> endereco <span style="color:orange">=</span> <span style="color:green">`${row.Bairro}, ${row.Cidade}`</span>;
+                            <span style="color:orange">if</span> (endereco.trim() <span style="color:orange">===</span> <span style="color:green">""</span>) {
+                                <span style="color:orange">console</span>.warn(<span style="color:green">"Endereço vazio para a linha:"</span>, row);
+                                <span style="color:orange">continue</span>;
+                            }
+                
+                            <span style="color:orange">const</span> coords <span style="color:orange">=</span> <span style="color:orange">await</span> geocodeAddress(endereco);
+                            <span style="color:orange">if</span> (coords) {
+                                L.marker([coords.lat, coords.lng])
+                                    .addTo(map)
+                                    .bindPopup(<span style="color:green">`Nome: ${row.Nome}`</span>);
+                            }
+                        }
+                    } <span style="color:orange">catch</span> (error) {
+                        <span style="color:orange">console</span>.error(<span style="color:green">"Houve um erro ao carregar ou processar o CSV:"</span>, error);
+                    }
+                }
+                loadAndGeocodeCSV();
+                
+
+              </pre>
+              <p class="escrita">
+                Durante o codigo pode ser visto a utilização de novas "tags", uma breve expllisicação sobre o use delas:
             </p>
-            <p>
-                <a href="ICJ_ListagemAlunosCluster.html" target="_blank"><button class="btn btn-secondary btn-block">Ver
-                        Exemplo com Cluster</button></a>
-            </p>
+            <ul>
+                <li>
+                    <h5 class="escrita"><b>await</b></h5>
+                    <p style="font-size: 15px;">É usado para esperar a execução de uma Promise ser resolvida antes de seguir para a próxima linha de código.</p>
+                    <p style="font-size: 15px;">No código, ele está aguardando a resolução de promessas assíncronas, como o fetch e o geocodeAddress. Por exemplo, a linha const csvString = await response.text(); vai esperar até que o conteúdo da resposta seja recuperado completamente antes de continuar a execução.</p>
+                    <p style="font-size: 15px;">Ou seja, o await é usado para garantir que o programa não prossega para a próxima linha de execução (como processar o CSV ou criar um marcador no mapa) até que a geocodificação e o carregamento dos dados do arquivo CSV tenham sido concluídos.</p>
+                </li>
+                <li><p style="font-size: 15px;"></p>
+                    <h5 class="escrita"><b>.geometry</b></h5>
+
+                        <li> <p style="font-size: 15px;"> .geometry se refere à parte da resposta que contém as coordenadas geográficas (latitude e longitude) do local solicitado. </p>
+                        </li>
+                        <li> <p style="font-size: 15px;"> Quando você chama a API do OpenCage para geocodificar um endereço, a resposta contém várias informações, e .geometry é o local onde as coordenadas de latitude e longitude são armazenadas. Por exemplo: const { lat, lng } = data.results[0].geometry;.</p>
+                        </li>
+
+                </li>
+                <li>
+                    <h5 class="escrita"><b>response.text():</b></h5>
+
+                        <li>
+                            <p style="font-size: 15px;">A função response.text() é usada para ler a resposta de uma requisição de rede (como o fetch) e extrair seu conteúdo como texto simples (em vez de, por exemplo, JSON).</p>
+                        </li>
+
+                </li>
+                <li>
+                    <h5 class="escrita"><b>.trim</b></h5>
+                    <p style="font-size: 15px;">O método .trim() remove os espaços em branco no início e no final de uma string.
+                    </p>
+                    <p style="font-size: 15px;">Você usa o .trim() para garantir que o campo de endereço não esteja vazio, ao remover qualquer espaço extra antes de fazer a comparação. Assim, garante que a string "endereco" seja verificada de maneira correta, sem considerar espaços indesejados.
+                    </p>
+                </li>
+
+                <li>
+                    <h5 class="escrita"><b> === </b></h5>
+                    <p style="font-size: 15px;">O operador === é um operador de comparação em JavaScript. Ele verifica tanto o valor quanto o tipo de duas variáveis.</p>
+                    <p style="font-size: 15px;">Para fazer uma comparação exata, sem conversões de tipo implícitas. Ao contrário do ==, que realiza uma comparação de valores e tenta converter os tipos se necessário, === garante que tanto o tipo quanto o valor sejam idênticos.</p>
+                </li>
+
+                <li>
+                    <h5 class="escrita"><b>.warn</b></h5>
+                    <p style="font-size: 15px;">O método .warn() faz parte do objeto console, e é utilizado para imprimir advertências no console do navegador.</p>
+                    <p style="font-size: 15px;">Serve para registrar uma mensagem de aviso no console, sem interromper o fluxo do código.</p>
+                </li>
+
+                <li>
+                    <h5 class="escrita"><b>loadAndGeocodeCSV</b></h5>
+                    <p style="font-size: 15px;">Esta função lida com o carregamento do arquivo CSV, a extração dos dados de endereço, e em seguida, chama a função de geocodificação para obter as coordenadas dos endereços.</p>
+                </li>
+            </ul>
+
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                  <p>
+                    <a href="ICJ_CarregarCSVOpenCage.html" target="_blank"
+                      ><button class="btn btn-secondary btn-block">
+                        Ver Exemplo
+                      </button></a
+                    >
+                  </p>
+                </div>
+                <div class="col-4"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 
+  <script>
+    function abrirCodigos(evt, CodigoNome) {
+      var i, tabconteudo, tablinks;
+      tabconteudo = document.getElementsByClassName("tabConteudo");
+      for (i = 0; i < tabconteudo.length; i++) {
+        tabconteudo[i].style.display = "none";
+      }
+
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(CodigoNome).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
 </html>
